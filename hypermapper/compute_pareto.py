@@ -1,4 +1,7 @@
 # This script computes the Pareto from a csv file. It outputs a csv file containing the Pareto.
+import sys
+sys.path.append('/home/gerryw/hypermapper')
+
 import csv
 import datetime
 import json
@@ -265,6 +268,7 @@ def compute_pareto(
             print(("Number of false after filtering " + str(count)))
 
     costs = np.column_stack((data_array[x_select], data_array[y_select]))
+    print(costs)
     bool_indicator_paretoline = sequential_is_pareto_efficient(costs)
 
     # Write on file the Pareto
@@ -300,6 +304,8 @@ def compute(
         os.chdir(hypermapper_home)
     except:
         hypermapper_pwd = "."
+
+    print("HELLO")
 
     print("######## compute_pareto.py #####################")
     print("### Parameters file is %s" % parameters_file)

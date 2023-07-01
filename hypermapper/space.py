@@ -392,6 +392,9 @@ class IntegerParameter(Parameter):
         :param size: the number of sampled random points
         :return: the random sampled values from the set of available values.
         """
+        # val = np.random.choice(self.values_list, size=size).astype(int)
+        # print(f'chosen depth: {val}')
+        # return val
         return np.random.choice(self.values_list, size=size).astype(int)
 
     def pdf(self, x):

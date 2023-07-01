@@ -1,6 +1,9 @@
 """
 Plots design space exploration results.
 """
+import sys
+sys.path.append('/home/gerryw/hypermapper')
+
 import json
 from collections import OrderedDict, defaultdict
 

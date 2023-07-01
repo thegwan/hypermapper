@@ -303,6 +303,7 @@ def main(config, black_box_function=None, profiling=None):
             % len(configurations)
         )
 
+        # run initial point sampling
         doe_data_array = param_space.run_configurations(
             hypermapper_mode,
             configurations,
@@ -492,7 +493,6 @@ def main(config, black_box_function=None, profiling=None):
                 % ((local_search_t1 - local_search_t0).total_seconds())
             )
         )
-
         configurations.append(best_configuration)
 
         # When we have selected "evaluations_per_optimization_iteration" configurations, evaluate the batch
