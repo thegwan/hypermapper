@@ -229,10 +229,11 @@ def main(config, black_box_function=None, profiling=None):
                 user_priors = True
 
             else:
-                print(
-                    "Warning: prior optimization does not work with multiple objectives yet, priors will be uniform"
-                )
-                config["input_parameters"][input_param]["prior"] = "uniform"
+                print("Wwarning prior opt may not work with multiobjective")
+                # print(
+                #     "Warning: prior optimization does not work with multiple objectives yet, priors will be uniform"
+                # )
+                # config["input_parameters"][input_param]["prior"] = "uniform"
 
     if user_priors:
         if config["prior_method"] == "bopro":
