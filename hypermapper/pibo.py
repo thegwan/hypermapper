@@ -138,6 +138,7 @@ def run_pibo(
     :param objective_limits: estimated minimum and maximum limits for each objective.
     :param classification_model: feasibility classifier for constrained optimization.
     """
+    print(f"Objective weights: {objective_weights}")
     scalarization_key = config["scalarization_key"]
     number_of_cpus = config["number_of_cpus"]
     # everything that gets passed to the acquisition function

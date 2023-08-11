@@ -225,11 +225,12 @@ def main(config, black_box_function=None, profiling=None):
     user_priors = False
     for input_param in config["input_parameters"]:
         if config["input_parameters"][input_param]["prior"] != "uniform":
-            if number_of_objectives == 1:
-                user_priors = True
+            user_priors = True
+            # if number_of_objectives == 1:
+            #     user_priors = True
 
-            else:
-                print("Wwarning prior opt may not work with multiobjective")
+            # else:
+            print("Wwarning prior opt may not work with multiobjective")
                 # print(
                 #     "Warning: prior optimization does not work with multiple objectives yet, priors will be uniform"
                 # )
