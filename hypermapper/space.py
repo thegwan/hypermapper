@@ -74,13 +74,13 @@ class Parameter:
         self.densities_alphas = {
             "uniform": 1.0,
             "gaussian": 3.0,
-            "decay": 0.8,
+            "decay": 1,
             "exponential": 1,
         }
         self.densities_betas = {
             "uniform": 1.0,
             "gaussian": 3.0,
-            "decay": 1,
+            "decay": 2,
             "exponential": 0.8,
         }
 
@@ -384,6 +384,7 @@ class IntegerParameter(Parameter):
             samples = beta(
                 self.densities_alphas[prior], self.densities_betas[prior], size
             )
+            print(f"samples: {samples}")
             return self.from_range_0_1_to_parameter_value(samples)
 
     def randomly_select_uniform(self, size=1):
@@ -392,10 +393,11 @@ class IntegerParameter(Parameter):
         :param size: the number of sampled random points
         :return: the random sampled values from the set of available values.
         """
-        # val = np.random.choice(self.values_list, size=size).astype(int)
-        # print(f'chosen depth: {val}')
-        # return val
-        return np.random.choice(self.values_list, size=size).astype(int)
+        val = np.random.choice(self.values_list, size=size).astype(int)
+        print(f'chosen randomly select uniform: {val}')
+        return val
+        # print(f"HERE: {self.values_list}")
+        # return np.random.choice(self.values_list, size=size).astype(int)
 
     def pdf(self, x):
         """
