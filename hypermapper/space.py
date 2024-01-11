@@ -384,7 +384,7 @@ class IntegerParameter(Parameter):
             samples = beta(
                 self.densities_alphas[prior], self.densities_betas[prior], size
             )
-            print(f"samples: {samples}")
+            # print(f"samples: {samples}")
             return self.from_range_0_1_to_parameter_value(samples)
 
     def randomly_select_uniform(self, size=1):
@@ -394,7 +394,7 @@ class IntegerParameter(Parameter):
         :return: the random sampled values from the set of available values.
         """
         val = np.random.choice(self.values_list, size=size).astype(int)
-        print(f'chosen randomly select uniform: {val}')
+        # print(f'chosen randomly select uniform: {val}')
         return val
         # print(f"HERE: {self.values_list}")
         # return np.random.choice(self.values_list, size=size).astype(int)
